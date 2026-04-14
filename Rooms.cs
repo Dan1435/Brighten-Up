@@ -12,7 +12,7 @@ public class Rooms : MonoBehaviour, IPointerDownHandler
 
     [Header("Room Settings")]
     public float roomWidth = 2.0f;
-    public float floorYOffset = -80f; // Adjusted for UI pixel space
+    public float floorYOffset = -80f; 
 
     private Image sr;
     private CharchterManager manager;
@@ -61,7 +61,6 @@ public class Rooms : MonoBehaviour, IPointerDownHandler
     {
         StopAllCoroutines();
         if (sr != null) sr.sprite = redSprite;
-        // The dopamine red shake!
         StartCoroutine(JuiceAnimations.GameOverPunch(transform, 12f, 0.45f));
     }
 
