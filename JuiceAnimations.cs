@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class JuiceAnimations
 {
-    // THIS IS THE MISSING METHOD
+
     public static IEnumerator GameOverPunch(Transform target, float intensity, float duration)
     {
         Vector3 originalPos = target.localPosition;
@@ -13,15 +13,15 @@ public static class JuiceAnimations
 
         while (elapsed < duration)
         {
-            // Using unscaledDeltaTime is key so it doesn't freeze on Game Over
+          
             elapsed += Time.unscaledDeltaTime;
 
-            // Shake
+            
             float x = Random.Range(-1f, 1f) * intensity;
             float y = Random.Range(-1f, 1f) * intensity;
             target.localPosition = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
 
-            // Scale Bounce
+            
             float t = elapsed / duration;
             if (t < 0.2f)
                 target.localScale = Vector3.Lerp(originalScale, punchScale, t / 0.2f);
