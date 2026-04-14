@@ -14,7 +14,7 @@ public class CharchterManager : MonoBehaviour
 
 {
 
-    // Static instance allows AdsManager to call ExecuteRevive() directly
+
 
     public static CharchterManager Instance;
 
@@ -46,7 +46,7 @@ public class CharchterManager : MonoBehaviour
 
     public static int score = 0;
 
-    private static int deathCount = 0; // Static to persist through scene reloads
+    private static int deathCount = 0; 
 
 
 
@@ -70,9 +70,9 @@ public class CharchterManager : MonoBehaviour
 
     [Header("Revive & Ad UI")]
 
-    public GameObject continueButton;   // The "Watch Ad" button
+    public GameObject continueButton;   
 
-    public GameObject revivePausePanel; // The "Ready?" panel after reviving
+    public GameObject revivePausePanel;
 
 
 
@@ -142,7 +142,7 @@ public class CharchterManager : MonoBehaviour
 
 
 
-        // Reset the Rewarded Ad limit for the new game session
+     
 
         if (AdsManager.Instance != null) AdsManager.Instance.ResetRevives();
 
@@ -162,7 +162,7 @@ public class CharchterManager : MonoBehaviour
 
 
 
-        // UI Initial State
+        
 
         if (menuCanvas != null) menuCanvas.SetActive(true);
 
@@ -356,7 +356,7 @@ public class CharchterManager : MonoBehaviour
 
 
 
-            // Logic to show/hide the Continue button based on ad readiness
+            
 
             if (continueButton != null)
 
@@ -394,7 +394,7 @@ public class CharchterManager : MonoBehaviour
 
         {
 
-            // Triggers the Rewarded Ad
+   
 
             AdsManager.Instance.ShowRewarded();
 
@@ -422,7 +422,7 @@ public class CharchterManager : MonoBehaviour
 
 
 
-        // IMPORTANT: Reset timer so player doesn't die immediately on resume
+
 
         ResetTimer();
 
@@ -436,7 +436,7 @@ public class CharchterManager : MonoBehaviour
 
 
 
-        // Show "Ready?" panel and pause time to give player a moment
+      
 
         Time.timeScale = 0;
 
@@ -470,7 +470,7 @@ public class CharchterManager : MonoBehaviour
 
             AdsManager.Instance.HideBanner();
 
-            // Show Interstitial every 5 games
+          
 
             if (deathCount > 0 && deathCount % 5 == 0)
 
