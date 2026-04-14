@@ -13,7 +13,7 @@ public class SafeAreaHandler : MonoBehaviour
 
     void Update()
     {
-        // Check if the screen orientation or safe area changed
+     
         if (lastSafeArea != Screen.safeArea)
         {
             Refresh();
@@ -24,7 +24,7 @@ public class SafeAreaHandler : MonoBehaviour
     {
         Rect safeArea = Screen.safeArea;
 
-        // Convert safe area rectangle from pixels to normalized anchors
+   
         Vector2 anchorMin = safeArea.position;
         Vector2 anchorMax = safeArea.position + safeArea.size;
 
